@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.0.1/olo', {
+mongoose.connect('mongodb://127.0.0.1:27017/olo-db', {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: true
+    useFindAndModify: false,
+    useUnifiedTopology: true
 })
