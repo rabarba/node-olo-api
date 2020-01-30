@@ -12,7 +12,7 @@ router.post('/users', async (req, res) => {
 
         res.status(201).send({ name: user.name, email: user.email, token })
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send(e.message)
     }
 })
 
@@ -23,7 +23,7 @@ router.post('/users/login', async (req, res) => {
 
         res.send({ name: user.name, email: user.email, token })
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send(e.message)
     }
 })
 
