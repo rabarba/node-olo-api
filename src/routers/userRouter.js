@@ -1,6 +1,6 @@
 const express = require('express')
 const User = require('../models/userModel')
-
+const auth = require('../middleware/auth')
 const router = new express.Router()
 
 router.post('/users', async (req, res) => {

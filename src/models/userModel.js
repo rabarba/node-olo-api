@@ -5,7 +5,7 @@ const userSchema = require('../schemas/userSchema')
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, 'onlinelibraryorganizer')
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET, { expiresIn: '12h' })
     return token
 }
 
